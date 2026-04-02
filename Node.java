@@ -5,6 +5,7 @@
  * @version 4.0
  */
 public class Node<E> {
+	private Node<E> previous;
 	private Node<E> next;
 	private E element;
 
@@ -12,7 +13,7 @@ public class Node<E> {
   	 * Creates an empty node.
   	 */
 	public Node() {
-		next = null;
+		next = previous = null;
 		element = null;
 	}
 
@@ -23,7 +24,7 @@ public class Node<E> {
   	 *            the element to be stored within the new node
   	 */
 	public Node(E elem) {
-		next = null;
+		next = previous = null;
 		element = elem;
 	}
 
@@ -37,6 +38,15 @@ public class Node<E> {
 	}
 
 	/**
+ 	 * Returns the previous node of this one.
+  	 *
+  	 * @return the previous node of the current one
+  	 */
+	public Node<E> getPrevious() {
+		return previous;
+	}
+
+	/**
  	 * Sets the node that follows this one.
  	 *
  	 * @param node
@@ -44,6 +54,16 @@ public class Node<E> {
  	 */
 	public void setNext(Node<E> node) {
 		next = node;
+	}
+
+	/**
+ 	 * Sets the node that is behind this one.
+ 	 *
+ 	 * @param node
+ 	 *            the node to be set to be behind the current one
+ 	 */
+	public void setPrevious(Node<E> node) {
+		previous = node;
 	}
 
 	/**
